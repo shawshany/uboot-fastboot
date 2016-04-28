@@ -154,18 +154,7 @@ void spl_board_init(void)
 	board_init();
 	perform_dsp_errata_i872_wa();
 #endif
-#if !(defined(CONFIG_SYS_DCACHE_OFF) && defined(CONFIG_SYS_ICACHE_OFF))
-	gd->bd->bi_dram[0].start = CONFIG_SYS_SDRAM_BASE;
-	gd->bd->bi_dram[0].size = omap_sdram_size();
-	gd->bd->bi_dram[1].start = CONFIG_SPL_TEXT_BASE;
-	gd->bd->bi_dram[1].size = (1 << 20);
 
-	gd->arch.tlb_addr = (gd->bd->bi_dram[0].start +
-		gd->bd->bi_dram[0].size) - 0x10000;
-	gd->arch.tlb_size = PGTABLE_SIZE;
-
-	enable_caches();
-#endif
 #if defined(CONFIG_OMAP_SECURE)
 	if (get_device_type() == GP_DEVICE) {
 		puts("SPL: Built for secure part, but this isn't a secure part...aborting!\n");

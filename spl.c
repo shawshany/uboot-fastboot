@@ -400,7 +400,6 @@ void board_init_r(gd_t *dummy1, ulong dummy2)
 	default:
 		debug("Unsupported OS image.. Jumping nevertheless..\n");
 	}
-	cleanup_before_linux();
 	jump_to_image_no_args(&spl_image);
 }
 

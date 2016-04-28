@@ -73,7 +73,7 @@
  * CONFIG_NR_DRAM_BANKS before including this file.
  */
 #ifndef CONFIG_NR_DRAM_BANKS
-#define CONFIG_NR_DRAM_BANKS		2
+#define CONFIG_NR_DRAM_BANKS		1
 #endif
 #define CONFIG_SYS_SDRAM_BASE		0x80000000
 #define CONFIG_SYS_INIT_SP_ADDR         (NON_SECURE_SRAM_END - \
